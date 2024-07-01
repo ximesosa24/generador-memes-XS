@@ -7,24 +7,26 @@
         <link rel="stylesheet" href="style.css">
     </head>
         <body>
-            <div class="main">
-                <div class="header">
+            <header class="container-header">
                 <h1 class="title">Generador de Memes</h1>
-                <button> Imagen</button>
-                <button>Texto</button>
-                <button>Modo oscuro</button>
+                <div class="container-button">
+                    <button> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen"> Imagen</button>
+                    <button><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">
+                        Texto</button>
+                    <button><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
                 </div>
-                <div>
+            </header>
+                <main class="container-main">
                     <div class="container-text">
-                        <h5>Top text</h5>
+                        <h5>TOP TEXT</h5>
                     </div>
-                    <div>
-                        <h5>
-                            Botton Text
-                        </h5>
-                        <button>Descargar meme</button>
+                    <div class="container-img"></div>
+                    <div class="container-bottom">
+                        <h5>BOTTOM TEXT</h5>
                     </div>
-                </div>
-            </div>
+                </main>
+                <section class="section-footer">
+                    <button class="dowload-btn"> <img class="icon-dowload" src="icons/i-download.png" alt="icono-descargar"> Descargar meme</button>
+                </section>
         </body>
 </html>
