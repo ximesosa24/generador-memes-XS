@@ -8,11 +8,10 @@
     </head>
         <body>
             <header class="container-header">
-                <h1 class="title">Generador de Memes</h1>
+                <h1 class="title-header">Generador de Memes</h1>
                 <div class="container-button">
                     <button> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen"> Imagen</button>
-                    <button><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">
-                        Texto</button>
+                    <button><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">Texto</button>
                     <button><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
                 </div>
             </header>
@@ -25,8 +24,61 @@
                         <h5>BOTTOM TEXT</h5>
                     </div>
                 </main>
+                <aside class="container-aside">
+                    <p class="title-aside">IMAGEN</p>
+                    <label for="url"> URL
+                        <input type="url" name="url" id="url-link" placeholder="https://example.com">
+                    </label>
+                    <div class="box-aside-bg">
+                        <p class="title-bg">FONDO</p>
+                        <label for="color">
+                            <input type="color" name="color">
+                        </label>
+                    <select name="select" id="select-menu" id="">
+                        <option value="option-1">Ninguno</option>
+                        <option value="option-2">Aclarar</option>
+                        <option value="option-3">Oscurecer</option>
+                        <option value="option-4">Diferencia</option>
+                        <option value="option-5">Luminosidad</option>
+                        <option value="option-6">Multiplicar</option>
+                    </select>
+                    </div>
+                    <div class="container-ranges">
+                        <label for = "range"> BRILLO
+                            <input type="range" name="brightness" id="range-brightness" min="0" max="1" step="0.1" value="1">
+                        </label>
+                        <label for="">OPACIDAD
+                            <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
+                        </label>
+                        <label for="">CONTRASTE
+                        <input type="range" name="" id="" min="100%" max="1000%" step="1" value="100%">
+                        </label>
+                        <label for="">DESENFOQUE
+                        <input type="range" name="" id="" min="0px" max="10px" step="0.1px" value="0px">
+                        </label>
+                        <label for="">ESCALA DE GRISES
+                            <input type="range" name="" id="" min="0%" max="100%" step="1%" value="0%">
+                        </label>
+                        <label for="">SEPIA
+                            <input type="range" name="" id="" min="0%" max="100$" step="1%" value="0%">
+                        </label>
+                        <label for="">HUE 
+                            <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
+                        </label>
+                        <label for="">SATURACIÓN
+                            <input type="range" name="" id="" min="100%" max="1000%" step="10%" value="100%">
+                        </label>
+                        <label for="">HUE
+                            <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
+                        </label>
+                        <label for="">NEGATIVO
+                            <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
+                        </label>
+                        <button class="reset-filters">Restablecer filtros</button>
+                    </div>
+                </aside>
                 <section class="section-footer">
-                    <button class="dowload-btn"> <img class="icon-dowload" src="icons/i-download.png" alt="icono-descargar"> Descargar meme</button>
+                    <button class="download-btn"> <img class="icon-download" src="icons/i-download.png" alt="icono-descargar"> Descargar meme</button>
                 </section>
         </body>
 </html>
