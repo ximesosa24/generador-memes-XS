@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Editor de memes</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     </head>
         <body>
             <header class="container-header">
@@ -15,67 +17,151 @@
                     <button><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
                 </div>
             </header>
-                <main class="container-main">
-                    <div class="container-text">
-                        <h5>TOP TEXT</h5>
+            <main class="container-main">
+                <div class="container-text">
+                    <h5>TOP TEXT</h5>
+                </div>
+                <div class="container-img"></div>
+                <div class="container-bottom">
+                    <h5>BOTTOM TEXT</h5>
+                </div>
+            </main>
+            <aside class="container-aside">
+                <!-- <section class="aside-img">
+                    <div class="btn-close">
+                        <button><img width="10" height="10" src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
-                    <div class="container-img"></div>
-                    <div class="container-bottom">
-                        <h5>BOTTOM TEXT</h5>
-                    </div>
-                </main>
-                <aside class="container-aside">
-                    <p class="title-aside">IMAGEN</p>
-                    <label for="url"> URL
-                        <input type="url" name="url" id="url-link" placeholder="https://example.com">
+                <p class="title-aside">IMAGEN</p>
+                <label for="url"> URL
+                    <input type="url" name="url" id="url-link" placeholder="https://example.com">
+                </label>
+                <div class="box-aside-bg">
+                    <p class="title-bg">FONDO</p>
+                    <label for="color">
+                        <input type="color" name="color">
                     </label>
-                    <div class="box-aside-bg">
-                        <p class="title-bg">FONDO</p>
-                        <label for="color">
-                            <input type="color" name="color">
-                        </label>
-                    <select name="select" id="select-menu" id="">
-                        <option value="option-1">Ninguno</option>
-                        <option value="option-2">Aclarar</option>
-                        <option value="option-3">Oscurecer</option>
-                        <option value="option-4">Diferencia</option>
-                        <option value="option-5">Luminosidad</option>
-                        <option value="option-6">Multiplicar</option>
-                    </select>
+                <select name="select" id="select-menu">
+                    <option value="option-1">Ninguno</option>
+                    <option value="option-2">Aclarar</option>
+                    <option value="option-3">Oscurecer</option>
+                    <option value="option-4">Diferencia</option>
+                    <option value="option-5">Luminosidad</option>
+                    <option value="option-6">Multiplicar</option>
+                </select>
+                </div>
+                <div class="container-ranges">
+                    <label for = "range"> BRILLO
+                        <input type="range" name="brightness" id="range-brightness" min="0" max="1" step="0.1" value="1">
+                    </label>
+                    <label for="">OPACIDAD
+                        <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
+                    </label>
+                    <label for="">CONTRASTE
+                    <input type="range" name="" id="" min="100%" max="1000%" step="1" value="100%">
+                    </label>
+                    <label for="">DESENFOQUE
+                    <input type="range" name="" id="" min="0px" max="10px" step="0.1px" value="0px">
+                    </label>
+                    <label for="">ESCALA DE GRISES
+                        <input type="range" name="" id="" min="0%" max="100%" step="1%" value="0%">
+                    </label>
+                    <label for="">SEPIA
+                        <input type="range" name="" id="" min="0%" max="100$" step="1%" value="0%">
+                    </label>
+                    <label for="">HUE 
+                        <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
+                    </label>
+                    <label for="">SATURACIÓN
+                        <input type="range" name="" id="" min="100%" max="1000%" step="10%" value="100%">
+                    </label>
+                    <label for="">HUE
+                        <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
+                    </label>
+                    <label for="">NEGATIVO
+                        <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
+                    </label>
+                    <button class="reset-filters">Restablecer filtros</button>
+                </div>
+                </section> -->
+                <section class="aside-txt">
+                    <div class="box-btn-close">
+                        <button class="btn-close"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
-                    <div class="container-ranges">
-                        <label for = "range"> BRILLO
-                            <input type="range" name="brightness" id="range-brightness" min="0" max="1" step="0.1" value="1">
+                        <p class="title-aside-text">TEXTO</p>
+                        <label for="text-area">SUPERIOR
+                            <textarea name="text" id="text-area"></textarea>
                         </label>
-                        <label for="">OPACIDAD
-                            <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
+                        <label for="checkbox">
+                            <input type="checkbox" name="check-box" id="checkbox-txt">Sin texto superior
                         </label>
-                        <label for="">CONTRASTE
-                        <input type="range" name="" id="" min="100%" max="1000%" step="1" value="100%">
+                        <label for="">INFERIOR
+                            <textarea name="text" id=""></textarea>
                         </label>
-                        <label for="">DESENFOQUE
-                        <input type="range" name="" id="" min="0px" max="10px" step="0.1px" value="0px">
+                        <label for="checkbox">
+                            <input type="checkbox" name="check-box" id="checkbox">Sin texto inferior
                         </label>
-                        <label for="">ESCALA DE GRISES
-                            <input type="range" name="" id="" min="0%" max="100%" step="1%" value="0%">
-                        </label>
-                        <label for="">SEPIA
-                            <input type="range" name="" id="" min="0%" max="100$" step="1%" value="0%">
-                        </label>
-                        <label for="">HUE 
-                            <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
-                        </label>
-                        <label for="">SATURACIÓN
-                            <input type="range" name="" id="" min="100%" max="1000%" step="10%" value="100%">
-                        </label>
-                        <label for="">HUE
-                            <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
-                        </label>
-                        <label for="">NEGATIVO
-                            <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
-                        </label>
-                        <button class="reset-filters">Restablecer filtros</button>
-                    </div>
+                        <div class="box-aside-font">
+                            <p class="title-font">FUENTE</p>
+                            <select name="select" id="select-font">
+                                <option value="arial">Arial</option>
+                                <option value="">Arial black</option>
+                                <option value="">American Typewriter</option>
+                                <option value="">Andale Mono</option>
+                                <option value="">Comic Sans Ms</option>
+                                <option value="">Helvetica</option>
+                                <option value="">Impact</option>
+                                <option value="">Verdana</option>
+                                <option value="">Times New Roman</option>
+                            </select>
+                                <div class="box-font-size">
+                                    <label for="number">
+                                        <input type="number" name="number" id="font-number" min="1" max="100">
+                                    </label>
+                                    <button class="align-left-btn">
+                                        <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/align-left.png" alt="align-left"/>
+                                    </button>
+                                    <button class="align-justify-btn">
+                                        <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/align-justify.png" alt="align-justify"/>
+                                    </button>
+                                    <button class="align-right-btn">
+                                        <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/align-right.png" alt="align-right"/>
+                                    </button>
+                                </div>
+                                <div class="box-aside-font">
+                                    <p class="title-color">COLOR</p>
+                                    <label for="">
+                                        <input type="color" name="color" id="">
+                                    </label>
+                                    <p class="title-bgcolor">FONDO</p>
+                                    <label for="">
+                                        <input type="color" name="" id="">
+                                        <input type="checkbox" name="trnasparent-bg" id="">Fondo transparente
+                                    </label>
+                                </div>
+                                <div class="box-contorno">
+                                    <p>CONTORNO</p>
+                                    <button>Ninguno</button>
+                                    <button>Claro</button>
+                                    <button>Oscuro</button>
+                                </div>
+                                <div class="box-spacing">
+                                    <p>Espaciado</p>
+                                    <label for="">
+                                        <input type="number" name="" id="" min="1" max="100">
+                                    </label>
+                                    <p>INTERLINEADO</p>
+                                    <select name="select" id="select-spacing">
+                                        <option value="">0.8</option>
+                                        <option value="">1</option>
+                                        <option value="">1.2</option>
+                                        <option value="">1.5</option>
+                                        <option value="">2</option>
+                                        <option value="">2.5</option>
+                                    </select>
+                                </div>
+                        </div>
+                        
+                    </section>
                 </aside>
                 <section class="section-footer">
                     <button class="download-btn"> <img class="icon-download" src="icons/i-download.png" alt="icono-descargar"> Descargar meme</button>
