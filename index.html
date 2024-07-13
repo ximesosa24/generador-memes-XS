@@ -12,9 +12,9 @@
             <header class="container-header">
                 <h1 class="title-header">Generador de Memes</h1>
                 <div class="container-button">
-                    <button> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen"> Imagen</button>
-                    <button><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">Texto</button>
-                    <button><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
+                    <button id="btnImg"> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen" > Imagen</button>
+                    <button id="btnTxt"><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">Texto</button>
+                    <button id="btnHidden"><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
                 </div>
             </header>
             <main class="container-main">
@@ -26,7 +26,7 @@
                     <h5>BOTTOM TEXT</h5>
                 </div>
             </main>
-            <aside class="container-aside">
+            <aside class="container-aside hidden" id="asideImg">
                 <section class="aside-img">
                     <div class="box-btn-close">
                         <button class="btn-close"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
@@ -50,6 +50,7 @@
                 </select>
                 </div>
                 <div class="container-ranges">
+                    <p class="title-bg">FILTROS</p>
                     <label for = "range"> BRILLO
                         <input type="range" name="brightness" id="range-brightness" min="0" max="1" step="0.1" value="1">
                     </label>
@@ -83,19 +84,21 @@
                     <button class="reset-filters">Restablecer filtros</button>
                 </div>
                 </section> 
-                <section class="aside-txt">
-                    <div class="box-btn-close">
+            </aside>
+            <aside class="container-aside hidden" id="asideTexto">
+                <section class="aside-txt" >
+                    <div class="box-btn-close" id="close">
                         <button class="btn-close"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
-                        <p class="title-aside-text">TEXTO</p>
+                        <p class="title-aside">TEXTO</p>
                         <label for="text-area">SUPERIOR
                             <textarea name="text" id="text-area"></textarea>
                         </label>
                         <label for="checkbox">
                             <input type="checkbox" name="check-box" id="checkbox-txt">Sin texto superior
                         </label>
-                        <label for="">INFERIOR
-                            <textarea name="text" id=""></textarea>
+                        <label for="text-area">INFERIOR
+                            <textarea name="text" id="text-area"></textarea>
                         </label>
                         <label for="checkbox">
                             <input type="checkbox" name="check-box" id="checkbox">Sin texto inferior
@@ -104,14 +107,14 @@
                             <p class="title-font">FUENTE</p>
                             <select name="select" id="select-font">
                                 <option value="arial">Arial</option>
-                                <option value="">Arial black</option>
-                                <option value="">American Typewriter</option>
-                                <option value="">Andale Mono</option>
-                                <option value="">Comic Sans Ms</option>
-                                <option value="">Helvetica</option>
-                                <option value="">Impact</option>
-                                <option value="">Verdana</option>
-                                <option value="">Times New Roman</option>
+                                <option value="arial-black">Arial black</option>
+                                <option value="american-typewriter">American Typewriter</option>
+                                <option value="andale-mono">Andale Mono</option>
+                                <option value="comic-sans">Comic Sans Ms</option>
+                                <option value="helvetica">Helvetica</option>
+                                <option value="impact">Impact</option>
+                                <option value="verdana">Verdana</option>
+                                <option value="times-new-roman">Times New Roman</option>
                             </select>
                                 <div class="box-font-size">
                                     <label for="number">
@@ -135,6 +138,7 @@
                                     <p class="title-bgcolor">FONDO</p>
                                     <label for="">
                                         <input type="color" name="" id="">
+                                    </label>
                                     <label for="">
                                         <input type="checkbox" name="trnasparent-bg" id="" class="transparent-checbox">Fondo transparente
                                     </label>
@@ -167,5 +171,6 @@
                 <section class="section-footer">
                     <button class="download-btn"> <img class="icon-download" src="icons/i-download.png" alt="icono-descargar"> Descargar meme</button>
                 </section>
+                <script src="main.js"></script>
         </body>
 </html>
