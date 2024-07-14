@@ -17,22 +17,25 @@
             <header class="container-header">
                 <h1 class="title-header">Generador de Memes</h1>
                 <div class="container-button">
-                    <button id="btnImg"> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen" > Imagen</button>
+                    <button id="btnImg"> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen"> Imagen</button>
                     <button id="btnTxt"><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">Texto</button>
-                    <button id="btnDark"><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
+                    <button id="btnDark"><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro"> Modo oscuro</button>
                 </div>
             </header>
             <main class="container-main">
-                <div class="container-meme" >
+                <div class="container-meme" id="canvaMeme" >
                 <div class="container-text">
                     <h5>TOP TEXT</h5>
                 </div>
-                <div class="container-img" id="canvaMeme"></div>
+                <div class="container-img" id="img-meme">
+                    <img src="" alt="" >
+                </div>
                 <div class="container-bottom">
                     <h5>BOTTOM TEXT</h5>
                 </div>
                 </div>
-            </main>
+
+            <!-- Aside Img -->
             <aside class="container-aside hidden" id="asideImg">
                 <section class="aside-img">
                     <div class="box-btn-close">
@@ -82,16 +85,14 @@
                     <label for="saturation">SATURACIÓN
                         <input type="range" name="saturation" id="saturation" min="100" max="1000" step="10" value="100">
                     </label>
-                    <label for="hue">HUE
-                        <input type="range" name="hue" id="HUE" min="0deg" max="359" step="1" value="0">
-                    </label>
                     <label for="negative">NEGATIVO
                         <input type="range" name="negative" id="negative" min="0" max="1" step="0.1" value="1">
                     </label>
-                    <button class="reset-filters">Restablecer filtros</button>
+                    <button class="reset-filters " id="reset-filters">Restablecer filtros</button>
                 </div>
                 </section> 
             </aside>
+            <!-- Aside Texto -->
             <aside class="container-aside hidden" id="asideTexto">
                 <section class="aside-txt" >
                     <div class="box-btn-close" id="close">
@@ -149,11 +150,11 @@
                                         <label for="input-bg-color">
                                             <input type="color" name="input-bg-color" id="input-bg-color">
                                         </label>
+                                    </div>
+                                </div>
                                         <label for="checkbox-color">
                                             <input type="checkbox" name="transparent-bg" id="checkbox-color" class="transparent-checbox">Fondo transparente
                                         </label>
-                                    </div>
-                                </div>
                                 <div class="box-contorno">
                                     <p>CONTORNO</p>
                                     <button>Ninguno</button>
