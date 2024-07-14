@@ -10,10 +10,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body{
     background-color: var(--bg-body);
 }
-
+.dark-mode, .oculto{
+    background-color: #222;
+    color: #fff;
+}
 /*Header*/
 header{
     background-color: var(--bg-header);
@@ -35,7 +39,7 @@ header{
     align-items: end;
     margin: 0 5px 5px 5px;
     font-size: 10px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
 }
 .icon-txt,.icon-mood, .icon-img{
     width: 14px;
@@ -46,9 +50,11 @@ header{
     border: none;
     margin: 0 3px 2px 3px;
     font-size: 17px;
-    background-color: var(--bg-header);
+    background-color: var(--bg-inputs);
     cursor: pointer;
+    padding: 4px 0;
 }
+
 
 /*Main*/
 
@@ -84,7 +90,7 @@ header{
     height: 400px;
     background-color: black;
 }
-/* Aside */
+/*Settings General Aside */
 .container-aside{
     width: 20%;
     height:100vh ;
@@ -133,6 +139,7 @@ header{
     height: 25px;
     border-radius: 10%;
     padding: 3px;
+    cursor: pointer;
 }
 .container-ranges label{
     display: block;
@@ -150,6 +157,7 @@ header{
     padding: 6px;
     border: none;
     color: white;
+    cursor: pointer;
 }
 
 /* Aside txt */
@@ -187,12 +195,21 @@ header{
     width: 100%;
     background-color: var(--bg-inputs);
     color:white;
+    cursor: pointer;
 }
 .box-aside-font{
     display: grid;
     gap: 5px;
 }
+.box-font-size label input {
+    color: white;
+}
 
+.icon-align{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
 .box-font-size label input{
     height: 100%;
     margin: auto;
@@ -200,9 +217,28 @@ header{
     background-color: var(--bg-inputs);
 }
 .box-aside-color{
-    display: inline-block;
-    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
 }
+.box-fondo-left{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    width: 50%;
+}
+.title-color{
+    width: 100%;
+}
+.title-bgcolor{
+    width: 100%;
+}
+.box-fondo-right{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
 .box-aside-color input{
     background-color: var(--bg-inputs);
     padding: 2.2px;

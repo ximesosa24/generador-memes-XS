@@ -4,26 +4,33 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Editor de memes</title>
+        <!-- dom to image -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="crossorigin="anonymous"></script>
+        <!-- file saver -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     </head>
-        <body>
+        <body class="dark-mode" id="body">
             <header class="container-header">
                 <h1 class="title-header">Generador de Memes</h1>
                 <div class="container-button">
                     <button id="btnImg"> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen" > Imagen</button>
                     <button id="btnTxt"><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">Texto</button>
-                    <button id="btnHidden"><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
+                    <button id="btnDark"><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro" /> Modo oscuro</button>
                 </div>
             </header>
             <main class="container-main">
+                <div class="container-meme" >
                 <div class="container-text">
                     <h5>TOP TEXT</h5>
                 </div>
-                <div class="container-img"></div>
+                <div class="container-img" id="canvaMeme"></div>
                 <div class="container-bottom">
                     <h5>BOTTOM TEXT</h5>
+                </div>
                 </div>
             </main>
             <aside class="container-aside hidden" id="asideImg">
@@ -41,45 +48,45 @@
                         <input type="color" name="color">
                     </label>
                 <select name="select" id="select-menu">
-                    <option value="option-1">Ninguno</option>
-                    <option value="option-2">Aclarar</option>
-                    <option value="option-3">Oscurecer</option>
-                    <option value="option-4">Diferencia</option>
-                    <option value="option-5">Luminosidad</option>
-                    <option value="option-6">Multiplicar</option>
+                    <option value="unset">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
                 </select>
                 </div>
                 <div class="container-ranges">
                     <p class="title-bg">FILTROS</p>
                     <label for = "range"> BRILLO
-                        <input type="range" name="brightness" id="range-brightness" min="0" max="1" step="0.1" value="1">
+                        <input type="range" name="brightness" id="brightness" min="0" max="1" step="0.1" value="1">
                     </label>
-                    <label for="">OPACIDAD
-                        <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
+                    <label for="opacity">OPACIDAD
+                        <input type="range" name="opacidad" id="opacity" min="0" max="1" step="0.1" value="1">
                     </label>
-                    <label for="">CONTRASTE
-                    <input type="range" name="" id="" min="100%" max="1000%" step="1" value="100%">
+                    <label for="contrast">CONTRASTE
+                    <input type="range" name="contraste" id="contrast" min="100" max="1000" step="1" value="100">
                     </label>
-                    <label for="">DESENFOQUE
-                    <input type="range" name="" id="" min="0px" max="10px" step="0.1px" value="0px">
+                    <label for="blur">DESENFOQUE
+                    <input type="range" name="desenfoque" id="blur" min="0" max="10" step="0.1" value="0">
                     </label>
-                    <label for="">ESCALA DE GRISES
-                        <input type="range" name="" id="" min="0%" max="100%" step="1%" value="0%">
+                    <label for="grayscale">ESCALA DE GRISES
+                        <input type="range" name="grayscale" id="grayscale" min="0" max="100" step="1" value="0">
                     </label>
-                    <label for="">SEPIA
-                        <input type="range" name="" id="" min="0%" max="100$" step="1%" value="0%">
+                    <label for="sepia">SEPIA
+                        <input type="range" name="sepia" id="sepia" min="0" max="100" step="1%" value="0%">
                     </label>
-                    <label for="">HUE 
-                        <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
+                    <label for="hue">HUE 
+                        <input type="range" name="hue" id="hue" min="0" max="359" step="1" value="0">
                     </label>
-                    <label for="">SATURACIÓN
-                        <input type="range" name="" id="" min="100%" max="1000%" step="10%" value="100%">
+                    <label for="saturation">SATURACIÓN
+                        <input type="range" name="saturation" id="saturation" min="100" max="1000" step="10" value="100">
                     </label>
-                    <label for="">HUE
-                        <input type="range" name="" id="" min="0deg" max="359deg" step="1deg" value="0deg">
+                    <label for="hue">HUE
+                        <input type="range" name="hue" id="HUE" min="0deg" max="359" step="1" value="0">
                     </label>
-                    <label for="">NEGATIVO
-                        <input type="range" name="" id="" min="0" max="1" step="0.1" value="1">
+                    <label for="negative">NEGATIVO
+                        <input type="range" name="negative" id="negative" min="0" max="1" step="0.1" value="1">
                     </label>
                     <button class="reset-filters">Restablecer filtros</button>
                 </div>
@@ -121,27 +128,31 @@
                                         <input type="number" name="number" id="font-number" min="1" max="100">
                                     </label>
                                     <button class="align-left-btn">
-                                        <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/align-left.png" alt="align-left"/>
+                                        <img src="https://img.icons8.com/fluency-systems-regular/48/align-left.png" alt="align-left" class="icon-align"/>
                                     </button>
                                     <button class="align-justify-btn">
-                                        <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/align-justify.png" alt="align-justify"/>
+                                        <img src="https://img.icons8.com/fluency-systems-regular/48/align-justify.png" alt="align-justify" class="icon-align"/>
                                     </button>
                                     <button class="align-right-btn">
-                                        <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/align-right.png" alt="align-right"/>
+                                        <img src="https://img.icons8.com/fluency-systems-regular/48/align-right.png" alt="align-right" class="icon-align"/>
                                     </button>
                                 </div>
                                 <div class="box-aside-color">
-                                    <p class="title-color">COLOR</p>
-                                    <label for="">
-                                        <input type="color" name="color" id="">
-                                    </label>
-                                    <p class="title-bgcolor">FONDO</p>
-                                    <label for="">
-                                        <input type="color" name="" id="">
-                                    </label>
-                                    <label for="">
-                                        <input type="checkbox" name="trnasparent-bg" id="" class="transparent-checbox">Fondo transparente
-                                    </label>
+                                    <div class="box-fondo-left">
+                                        <p class="title-color">COLOR</p>
+                                        <label for="Color">
+                                            <input type="color" name="color" id="Color">
+                                        </label>
+                                    </div>
+                                    <div class="box-fondo-right">
+                                        <p class="title-bgcolor">FONDO</p>
+                                        <label for="input-bg-color">
+                                            <input type="color" name="input-bg-color" id="input-bg-color">
+                                        </label>
+                                        <label for="checkbox-color">
+                                            <input type="checkbox" name="transparent-bg" id="checkbox-color" class="transparent-checbox">Fondo transparente
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="box-contorno">
                                     <p>CONTORNO</p>
@@ -169,8 +180,9 @@
                     </section>
                 </aside>
                 <section class="section-footer">
-                    <button class="download-btn"> <img class="icon-download" src="icons/i-download.png" alt="icono-descargar"> Descargar meme</button>
+                    <button class="download-btn" id="button-descarga"> <img class="icon-download" src="icons/i-download.png" alt="icono-descargar">Descargar meme</button>
                 </section>
                 <script src="main.js"></script>
+            </main>
         </body>
 </html>
