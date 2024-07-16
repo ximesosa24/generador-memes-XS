@@ -10,7 +10,7 @@
         <!-- file saver -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome.min.css">
 
     </head>
         <body class="dark-mode" id="body">
@@ -25,10 +25,10 @@
             <main class="container-main">
                 <div class="container-meme" id="canvaMeme" >
                 <div class="container-text">
-                    <h5>TOP TEXT</h5>
+                    <h5 id="topText">TOP TEXT</h5>
                 </div>
-                <div class="container-img" id="img-meme">
-                    <img src="" alt="" >
+                <div class="container-img" >
+                    <img src="" alt="" id="img-meme">
                 </div>
                 <div class="container-bottom">
                     <h5>BOTTOM TEXT</h5>
@@ -39,66 +39,66 @@
             <aside class="container-aside hidden" id="asideImg">
                 <section class="aside-img">
                     <div class="box-btn-close">
-                        <button class="btn-close"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
+                        <button class="btn-close" id="btnClose"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
-                <p class="title-aside">IMAGEN</p>
-                <label for="url"> URL
-                    <input type="url" name="url" id="url-link" placeholder="https://example.com">
-                </label>
-                <div class="box-aside-bg">
-                    <p class="title-bg">FONDO</p>
-                    <label for="color">
-                        <input type="color" name="color">
+                    <p class="title-aside">IMAGEN</p>
+                    <label for="url"> URL
+                        <input type="url" name="url" id="url-link" placeholder="https://example.com">
                     </label>
-                <select name="select" id="select-menu">
-                    <option value="unset">Ninguno</option>
-                    <option value="lighten">Aclarar</option>
-                    <option value="darken">Oscurecer</option>
-                    <option value="difference">Diferencia</option>
-                    <option value="luminosity">Luminosidad</option>
-                    <option value="multiply">Multiplicar</option>
-                </select>
-                </div>
-                <div class="container-ranges">
-                    <p class="title-bg">FILTROS</p>
-                    <label for = "range"> BRILLO
-                        <input type="range" name="brightness" id="brightness" min="0" max="1" step="0.1" value="1">
-                    </label>
-                    <label for="opacity">OPACIDAD
-                        <input type="range" name="opacidad" id="opacity" min="0" max="1" step="0.1" value="1">
-                    </label>
-                    <label for="contrast">CONTRASTE
-                    <input type="range" name="contraste" id="contrast" min="100" max="1000" step="1" value="100">
-                    </label>
-                    <label for="blur">DESENFOQUE
-                    <input type="range" name="desenfoque" id="blur" min="0" max="10" step="0.1" value="0">
-                    </label>
-                    <label for="grayscale">ESCALA DE GRISES
-                        <input type="range" name="grayscale" id="grayscale" min="0" max="100" step="1" value="0">
-                    </label>
-                    <label for="sepia">SEPIA
-                        <input type="range" name="sepia" id="sepia" min="0" max="100" step="1%" value="0%">
-                    </label>
-                    <label for="hue">HUE 
-                        <input type="range" name="hue" id="hue" min="0" max="359" step="1" value="0">
-                    </label>
-                    <label for="saturation">SATURACIÓN
-                        <input type="range" name="saturation" id="saturation" min="100" max="1000" step="10" value="100">
-                    </label>
-                    <label for="negative">NEGATIVO
-                        <input type="range" name="negative" id="negative" min="0" max="1" step="0.1" value="1">
-                    </label>
-                    <button class="reset-filters " id="reset-filters">Restablecer filtros</button>
-                </div>
+                    <div class="box-aside-bg">
+                        <p class="title-bg">FONDO</p>
+                        <label for="color">
+                            <input type="color" name="color">
+                        </label>
+                    <select name="select" id="select-menu">
+                        <option value="unset">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select>
+                    </div>
+                    <div class="container-ranges">
+                        <p class="title-bg">FILTROS</p>
+                        <label for = "range"> BRILLO
+                            <input type="range" name="brightness" id="brightness" min="0" max="1" step="0.1" value="1">
+                        </label>
+                        <label for="opacity">OPACIDAD
+                            <input type="range" name="opacidad" id="opacity" min="0" max="1" step="0.1" value="1">
+                        </label>
+                        <label for="contrast">CONTRASTE
+                        <input type="range" name="contraste" id="contrast" min="100" max="1000" step="1" value="100">
+                        </label>
+                        <label for="blur">DESENFOQUE
+                        <input type="range" name="desenfoque" id="blur" min="0" max="10" step="0.1" value="0">
+                        </label>
+                        <label for="grayscale">ESCALA DE GRISES
+                            <input type="range" name="grayscale" id="grayscale" min="0" max="100" step="1" value="0">
+                        </label>
+                        <label for="sepia">SEPIA
+                            <input type="range" name="sepia" id="sepia" min="0" max="100" step="1" value="0">
+                        </label>
+                        <label for="hue">HUE 
+                            <input type="range" name="hue" id="hue" min="0" max="359" step="1" value="0">
+                        </label>
+                        <label for="saturation">SATURACIÓN
+                            <input type="range" name="saturation" id="saturation" min="100" max="1000" step="10" value="100">
+                        </label>
+                        <label for="negative">NEGATIVO
+                            <input type="range" name="negative" id="negative" min="0" max="1" step="0.1" value="0">
+                        </label>
+                        <button class="reset-filters " id="reset-filters">Restablecer filtros</button>
+                    </div>
                 </section> 
             </aside>
             <!-- Aside Texto -->
             <aside class="container-aside hidden" id="asideTexto">
                 <section class="aside-txt" >
                     <div class="box-btn-close" id="close">
-                        <button class="btn-close"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
+                        <button class="btn-close" id="btnCloseTxt"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
-                        <p class="title-aside">TEXTO</p>
+                        <p class="title-aside" id="titleAside">TEXTO</p>
                         <label for="text-area">SUPERIOR
                             <textarea name="text" id="text-area"></textarea>
                         </label>
