@@ -21,7 +21,13 @@ const btnCloseTxt = document.getElementById('btnCloseTxt') ; //btn to close asid
 const selectFont = document.getElementById('select-font');//btn fonts 
 const titleAside = document.getElementById('titleAside');//title aside
 const textArea = document.getElementById('text-area');//input textarea aside
-const topText = document.getElementById('topText');// top text
+const topText = document.getElementById('topText');// h5 top text
+const bottomText =  document.getElementById('bottomText'); // h5 bottom text
+const textarea = document.getElementById('text-Area');// text area inferior
+const pickerColor = document.getElementById ('selectColor')//color picker
+const selectMenu = document.getElementById('select-menu');//menu selector
+const checkbox = document.getElementById ('checkbox.txt');  // checkbox aside img
+
 
 //Event dark mode //broken//
 btn.addEventListener('click', function(){
@@ -54,6 +60,8 @@ btnCloseTxt.addEventListener('click', function(){
 });
 
 
+//JS ASIDE IMG//
+
 //Function de URL
 url.addEventListener("change", function() {
   imgMeme.setAttribute("src", url.value);
@@ -72,13 +80,19 @@ url.addEventListener("change", function() {
 //     imgMeme.style.fontSize = '36px'; 
 //   });
 
-//Event textarea replace top text
-textArea.addEventListener('input', function() {
-  const text = textArea.value;
-  const title = titleAside.textContent.replace('texto', '');
-  topText.textContent = text; 
+// Picker color 
+pickerColor.addEventListener('change', function() {
+    const selectedColor = this.value;
+    divMeme.style.backgroundColor = selectedColor;
 });
-  
+
+//Event mixer img
+selectMenu.addEventListener('change', function() {
+  const selectedBlendMode = this.value;
+  imgMeme.style.mixBlendMode = selectedBlendMode;
+});
+
+
 //Function add filters
 function addFilters() {
   const brillo = `brightness(${brightness.value}) `;
@@ -126,6 +140,25 @@ resetFilters.addEventListener("click", function() {
 
     resetFilters();
 });
+
+
+
+//JS ASIDE TXT //
+
+//Event textarea replace top text
+textArea.addEventListener('input', function() {
+  const text = textArea.value;
+  const title = titleAside.textContent.replace('texto', '');
+  topText.textContent = text; 
+});
+  
+//Event textArea replace bottom text
+textarea.addEventListener('input',  function(){
+  const text2 = textarea.value;
+  const title2 = bottomText.textContent.replace('texto', '');
+  bottomText.textContent = text2;
+});
+
 
 
 //Download Meme//
