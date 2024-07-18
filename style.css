@@ -41,23 +41,26 @@ header{
     font-size: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
 }
-.icon-txt,.icon-mood, .icon-img{
-    width: 14px;
-    height: 14px;
+.icon-txt,.icon-mood, .icon-img{ 
+    width: 15px;
+    height: 15px;
+    padding-top: 2px ;
 }
 .container-button button{
     color: white;
     border: none;
     margin: 0 3px 2px 3px;
     font-size: 17px;
-    background-color: var(--bg-inputs);
+    background-color: var(--bg-header);
     cursor: pointer;
     padding: 4px 0;
     border-radius: 15%;
+    transition:all .1s;
 }
 button:hover{
-background-color: rgb(48, 1, 1);
+background-color: var(--bg-inputs); /
 }
+
 
 /*Main*/
 
@@ -219,9 +222,6 @@ background-color: rgb(48, 1, 1);
     display: grid;
     gap: 5px;
 }
-.box-font-size label input {
-    color: white;
-}
 
 .icon-align{
     width: 20px;
@@ -233,6 +233,7 @@ background-color: rgb(48, 1, 1);
     margin: auto;
     width: 70%;
     background-color: var(--bg-inputs);
+    color: white;
 }
 .box-aside-color{
     display: flex;
@@ -279,6 +280,31 @@ background-color: rgb(48, 1, 1);
     border: none;
     color: white;
 }
+/* agrego estilos a los botones contorno
+.contorno-ninguno {
+    text-shadow: none;
+}
+.contorno-claro {
+    text-shadow: 
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;  
+    /* color: black; 
+ } */
+
+/*.contorno-oscuro {
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+    color: white;
+    rgb(0, 0, 0) 2px 2px,
+    rgb(0, 0, 0) -2px 2px, 
+    rgb(0, 0, 0) 2px -2px, 
+    rgb(0, 0, 0) -2px -2px;
+} */
 .box-spacing{
     padding-top: 3px;
 }
@@ -309,6 +335,13 @@ input{
     font-size: 15px;
     border: 1px solid var(--bg-inputs);
     cursor:pointer;
-    margin-top: 10px;
+    margin-top: 20px;
 }
-
+.download-btn:hover{
+    background-color:rgb(105, 52, 105);
+}
+.icon-download{ 
+    width: 20px;
+    height: 20px;
+    padding: 6px 5px 0 0;
+}

@@ -33,10 +33,14 @@ const alignJustify = document.querySelector('.align-justify-btn');// btn align j
 const alignRight = document.querySelector('.align-right-btn');// btn align right
 const textColor = document.getElementById('textColor'); // input text color
 const bgColor = document.getElementById('input-bg-color'); //bg color
+const btnNinguno = document.getElementById('ninguno'); //btn ningún contorno
+const btnClaro = document.getElementById('claro');//btn claro contorn
+const btnOscuro = document.getElementById('oscuro'); //btn oscuro contorn
+const inputSpacing = document.getElementById('inputSpacing'); //input text spacing 
+const containerTop = document.querySelector('.container-text'); //container top text
+const containerBottom = document.querySelector('.container-bottom'); //container bottom text
 
-
-
-//Event dark mode //
+//Event dark mode - it doesn't works correctly//
 btn.addEventListener('click', function(){
   if (body.classList.contains('dark-mode')){
     body.classList.remove('dark-mode');
@@ -78,7 +82,7 @@ url.addEventListener("change", function() {
 }
 );
 
- fontNumber.addEventListener('input', function() {
+  fontNumber.addEventListener('input', function() {
     const fontSize = this.value;
     topText.style.fontSize = fontSize + 'px';
     bottomText.style.fontSize = fontSize + 'px';
@@ -173,7 +177,7 @@ textarea.addEventListener('input',  function(){
 
 
 //Event for change the font size
- fontNumber.addEventListener('input', function() {
+fontNumber.addEventListener('input', function() {
     const fontSize = this.value;
     topText.style.fontSize = fontSize + 'px';
     bottomText.style.fontSize = fontSize + 'px';
@@ -205,19 +209,55 @@ textColor.addEventListener('change', function() {
 //Change to background text color 
 bgColor.addEventListener('change', function(){
   const selectedColor = this.value;
-  topText.style.backgroundColor = selectedColor;
-  bottomText.style.backgroundColor = selectedColor;
+  containerTop.style.backgroundColor = selectedColor;
+  containerBottom.style.backgroundColor = selectedColor;
 });
 
-//spacing
+//Spacing //
+const actualizarEspaciado = () => {
+  const paddingY = inputSpacing.value
+  containerTop.style.padding = `${paddingY}px`;
+  containerBottom.style.padding = `${paddingY}px`;
+};
 
-bgColor.addEventListener('change', function() {
-    let textSpacing = this.value;
-    topText.style.padding = textSpacing + "px";
-    bottomText.style.padding = textSpacing + "px";
-});
+inputSpacing.addEventListener('input', actualizarEspaciado);
 
 
+//CONTORN  //
+//   function eliminarClasesDeContorno() {
+//   topText.classList.remove('contorno-ninguno', 'contorno-claro', 'contorno-oscuro');
+//   bottomText.classList.remove('contorno-ninguno', 'contorno-claro', 'contorno-oscuro');
+// }
+
+// Agrega los event listeners a los botones REVISAR
+// btnNinguno.addEventListener('click', function (){
+//   eliminarClasesDeContorno();
+//   topText.classList.add('contorno-ninguno');
+//   bottomText.classList.add('contorno-ninguno');
+// });
+
+// btnClaro.addEventListener('click', function () {
+//   eliminarClasesDeContorno();
+//   topText.classList.add('contorno-claro');
+//   bottomText.classList.add('contorno-claro');
+// });
+
+// btnOscuro.addEventListener('click', function () {
+//   eliminarClasesDeContorno();
+//   topText.classList.add('contorno-oscuro');
+//   bottomText.classList.add('contorno-oscuro');
+// }); 
+//revisar//
+
+
+//LineSpacing //
+const lineSpacing = document.getElementById('lineSpacing');
+const actualizarInterlineado = () => {
+  const lineHeight = lineSpacing.value
+  topText.style.lineHeight = lineHeight + px;
+  bottomText.style.lineHeight = lineHeight + px;
+};
+lineSpacing.addEventListener('input', actualizarInterlineado);
 
 
 
