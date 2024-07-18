@@ -1,4 +1,4 @@
-//Variables//
+//VARIABLES//
 const btn = document.querySelector('#btnDark'); //btn dark
 const body = document.querySelector('body'); //body 
 const header = document.querySelector('#dark-mode'); //id mode dark
@@ -27,9 +27,16 @@ const textarea = document.getElementById('text-Area');// text area inferior
 const pickerColor = document.getElementById ('selectColor')//color picker
 const selectMenu = document.getElementById('select-menu');//menu selector
 const checkbox = document.getElementById ('checkbox.txt');  // checkbox aside img
+const fontNumber = document.getElementById('font-number');//input size font
+const alignLeft = document.querySelector('.align-left-btn');//btn align left
+const alignJustify = document.querySelector('.align-justify-btn');// btn align justify
+const alignRight = document.querySelector('.align-right-btn');// btn align right
+const textColor = document.getElementById('textColor'); // input text color
+const bgColor = document.getElementById('input-bg-color'); //bg color
 
 
-//Event dark mode //broken//
+
+//Event dark mode //
 btn.addEventListener('click', function(){
   if (body.classList.contains('dark-mode')){
     body.classList.remove('dark-mode');
@@ -39,7 +46,9 @@ btn.addEventListener('click', function(){
   });
 
 
-//Asides//
+
+//ASIDES//
+
 document.getElementById('btnTxt').addEventListener('click', function() {
   document.getElementById('asideTexto').classList.toggle('hidden');
 });
@@ -60,7 +69,7 @@ btnCloseTxt.addEventListener('click', function(){
 });
 
 
-//JS ASIDE IMG//
+// ASIDE IMG//
 
 //Function de URL
 url.addEventListener("change", function() {
@@ -69,16 +78,12 @@ url.addEventListener("change", function() {
 }
 );
 
-// //Function fonts //revisar{
-//   selectFont.addEventListener('change', function() {
-//     const selectedFont = selectFont.value;
-//     imgMeme.style.fontFamily = selectedFont;
-//   });
-//   selectFont.addEventListener('change', function() {
-//     const selectedFont = selectFont.value;
-//     imgMeme.style.fontFamily = selectedFont;
-//     imgMeme.style.fontSize = '36px'; 
-//   });
+ fontNumber.addEventListener('input', function() {
+    const fontSize = this.value;
+    topText.style.fontSize = fontSize + 'px';
+    bottomText.style.fontSize = fontSize + 'px';
+});
+
 
 // Picker color 
 pickerColor.addEventListener('change', function() {
@@ -95,7 +100,7 @@ selectMenu.addEventListener('change', function() {
 
 //Function add filters
 function addFilters() {
-  const brillo = `brightness(${brightness.value}) `;
+  const brillo = `brightness(${brightness.value} ) `;
   const desenfoque = `blur(${blurFilter.value}px) `;
   const contraste = `contrast(${contrast.value}%) `;
   const grises = `grayscale(${grayscale.value}%) `;
@@ -142,8 +147,8 @@ resetFilters.addEventListener("click", function() {
 });
 
 
+// ASIDE TXT //
 
-//JS ASIDE TXT //
 
 //Event textarea replace top text
 textArea.addEventListener('input', function() {
@@ -158,6 +163,62 @@ textarea.addEventListener('input',  function(){
   const title2 = bottomText.textContent.replace('texto', '');
   bottomText.textContent = text2;
 });
+
+//Event change font family - it doesn't work correctly
+  selectFont.addEventListener('change', function() {
+    const selectedFont = selectFont.value;
+    topText.style.fontFamily = selectedFont.value;
+    bottomText.style.fontFamily = selectedFont.value;
+  });
+
+
+//Event for change the font size
+ fontNumber.addEventListener('input', function() {
+    const fontSize = this.value;
+    topText.style.fontSize = fontSize + 'px';
+    bottomText.style.fontSize = fontSize + 'px';
+});
+
+// Events to align text
+alignLeft.addEventListener('click', function () {
+    topText.style.justifyContent = 'left';
+    bottomText.style.justifyContent = 'left';
+});
+
+alignJustify.addEventListener('click', function(){
+  topText.style.justifyContent = 'center';
+  bottomText.style.justifyContent = 'center';
+});
+
+alignRight.addEventListener('click', function(){
+  topText.style.justifyContent = 'right';
+  bottomText.style.justifyContent = 'right';
+});
+
+// Change text color 
+textColor.addEventListener('change', function() {
+  const selectedColor = this.value;
+  topText.style.color = selectedColor;
+  bottomText.style.color = selectedColor;
+});
+
+//Change to background text color 
+bgColor.addEventListener('change', function(){
+  const selectedColor = this.value;
+  topText.style.backgroundColor = selectedColor;
+  bottomText.style.backgroundColor = selectedColor;
+});
+
+//spacing
+
+bgColor.addEventListener('change', function() {
+    let textSpacing = this.value;
+    topText.style.padding = textSpacing + "px";
+    bottomText.style.padding = textSpacing + "px";
+});
+
+
+
 
 
 
