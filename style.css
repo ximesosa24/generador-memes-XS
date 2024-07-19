@@ -1,6 +1,6 @@
 :root{
     --bg-header:#2c252e8f;
-    --bg-body:#2d2032; 
+    --bg-body:#2d2032;
     --bg-inputs:#393e49;
     --bg-aside:#252935;
     --bg-btn:rgb(71, 34, 78);
@@ -18,7 +18,7 @@ body{
     background: transparent;
 }
 
-/* 
+/*
 .light-mode {
     --bg-body: #f2f2f2;
     --bg-header: #fff;
@@ -46,20 +46,17 @@ header{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
 }
 .title-header{
-    color: white;
-    padding:15px 0;
+    padding:10px 0;
     font-size:2rem;
 }
 .container-button{
-    height: 40px;
-    align-items: end;
-    margin: 0 5px 5px 5px;
-    font-size: 10px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    display:flex;
+    gap: 1rem;
 }
-.icon-txt,.icon-mood, .icon-img{ 
+.icon-txt,.icon-mood, .icon-img{
     width: 15px;
     height: 15px;
     padding-top: 2px ;
@@ -78,10 +75,23 @@ header{
 button:hover{
 background-color: var(--bg-inputs); /
 }
+button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
 
 /*Main*/
-
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
 .container-text{
     background-color: white;
     height: 55px;
@@ -132,10 +142,11 @@ background-color: var(--bg-inputs); /
 /*General settings Aside */
 .container-aside{
     width: 20%;
-    height:100vh ;
+    height:100% ;
     background-color:var(--bg-aside);
-    flex-direction:column; 
-    position: absolute;
+    display:flex;
+    flex-direction:column;
+    position: fixed;
     top: 0;
     float: right;
     right: 0;
@@ -143,6 +154,10 @@ background-color: var(--bg-inputs); /
     font-size: 15px;
     gap: 25px;
     padding: 0 2px;
+}
+#asideImg{
+    display: flex;
+    position: fixed;
 }
 .hidden{
     display: none;
@@ -212,7 +227,7 @@ background-color: var(--bg-inputs); /
     margin-top: 0;
 
 }
-.box-btn-close button img{ /*add*/
+.box-btn-close button img{
     cursor: pointer;
     width: 5px;
     width: 15px;
@@ -227,7 +242,7 @@ background-color: var(--bg-inputs); /
 .title-aside-text{
     font-size: 1rem;
     text-align: center;
-} 
+}
 /* revisar: */
 .box-font-size{
     display: flex;
@@ -286,7 +301,7 @@ background-color: var(--bg-inputs); /
     border: none;
 }
 .box-contorno{
-    display: flex; 
+    display: flex;
     height: 50px;
     flex-wrap: wrap;
     justify-content: center;
@@ -297,7 +312,7 @@ background-color: var(--bg-inputs); /
 .box-contorno button{
     cursor: pointer;
     background-color:var(--bg-inputs);
-    border-radius: 18%; 
+    border-radius: 18%;
     margin-left: 10px;
     padding: 6px;
     border: none;
@@ -325,9 +340,6 @@ input{
 }
 .download-btn{
     background-color: var(--bg-btn);
-    color: white;
-    width: 12%;
-    height: 38px;
     justify-content: center;
     border-radius: 5%;
     font-size: 15px;
@@ -338,23 +350,27 @@ input{
 .download-btn:hover{
     background-color:rgb(105, 52, 105);
 }
-.icon-download{ 
+.icon-download{
     width: 20px;
     height: 20px;
     padding: 6px 5px 0 0;
 }
 
 /* Media Querys */
-/* @media (max-width:768px){
-    .container-aside{
 
+@media (max-width: 768px) {
+    .title-header {
+    font-size: 25px;
+    }
+    .container-meme{
+        width: 600px;
+    } 
+    .container-aside {
+    position: relative;
+    width: 100%;
+    padding: 0px 20px
     }
     .download-btn{
-        font-size: 10px;
-        padding-bottom: 10px;
+        padding: 5px;
     }
-    .icon-download{
-        padding: none;
-    }
-} */
-
+}

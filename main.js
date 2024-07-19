@@ -1,4 +1,4 @@
-//VARIABLES//
+//   VARIABLES    //
 const btn = document.querySelector('#btnDark'); //btn dark
 const body = document.querySelector('body'); //body
 const header = document.querySelector('#dark-mode'); //id mode dark
@@ -16,6 +16,7 @@ const resetFilters = document.getElementById('reset-filters'); //Btn reset filte
 const botonDescarga = document.getElementById('button-descarga'); // btn download meme
 const contenedorMeme = document.getElementById('canvaMeme');// div download meme
 const imgMeme = document.getElementById('img-meme'); // div img
+const asideTxt = document.getElementById('asideTexto');//aside txt
 const btnClose = document.getElementById ('btnClose'); //btn to close aside img
 const btnCloseTxt = document.getElementById('btnCloseTxt') ; //btn to close aside txt
 const selectFont = document.getElementById('select-font');//btn fonts
@@ -55,33 +56,30 @@ btn.addEventListener('click', function(){
   }
   });
 
-//ASIDES//
 
-const btnTxt = document.getElementById('btnTxt');
-const asideTxt = document.getElementById('asideTexto');
+//  SHOW ASIDES   // --CAMBIE--
 
-btnTxt.addEventListener('click', function() {
-  asideTxt.classList.toggle('hidden');
+btnImg.addEventListener('click', () => {
+    asideImg.style.display = "block";
+    asideTxt.style.display = "none";
 });
 
-const btnImg = document.getElementById('btnImg');
-const asideImg = document.getElementById('asideImg');
-btnImg.addEventListener('click', function() {
-  document.getElementById('asideImg').classList.toggle('hidden');
+btnTxt.addEventListener('click',() => {
+    asideTxt.style.display = "block";
+    asideImg.style.display = "none";
 });
 
-//Function to close aside img and txt
-
-btnClose.addEventListener('click', function() {
-  btnClose.closest('aside').classList.add('hidden');
+btnClose.addEventListener('click', () =>{
+    asideTxt.style.display = "none";
+    asideImg.style.display = "none";
 });
-
-btnCloseTxt.addEventListener('click', function(){
-  btnCloseTxt.closest('aside').classList.add('hidden');
+btnCloseTxt.addEventListener('click', () =>{
+  asideTxt.style.display = "none";
+  asideImg.style.display = "none";
 });
 
 
-// ASIDE IMG//
+//  ASIDE IMG   //
 
 //Function de URL
 url.addEventListener("change", function() {
@@ -159,7 +157,7 @@ resetFilters.addEventListener("click", function() {
 });
 
 
-// ASIDE TXT //
+//  ASIDE TXT   //
 
 
 //Event textarea replace top text

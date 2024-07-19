@@ -17,40 +17,40 @@
             <header class="container-header">
                 <h1 class="title-header">Generador de Memes</h1>
                 <div class="container-button">
-                    <button id="btnImg"> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen"> Imagen</button>
-                    <button id="btnTxt"><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">Texto</button>
-                    <button id="btnDark"><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro"> Modo oscuro</button>
+                    <button id="btnImg" aria-label="boton-imagen"> <img class="icon-img" src="icons/i-img.png" alt="icono-imagen"> Imagen</button>
+                    <button id="btnTxt" aria-label="boton-texto"><img class="icon-txt" src="icons/i-text.png" alt="icono-texto">Texto</button>
+                    <button id="btnDark" aria-label="modo-oscuro"><img class="icon-mood" src="icons/i-light.png" alt="modo-oscuro"> Modo oscuro</button>
                 </div>
             </header>
             <main class="container-main">
-                <div class="container-meme" id="canvaMeme" >
+                <div class="container-meme" id="canvaMeme"  aria-label="contenedor de meme">
                 <div class="container-text" id="container-text-sup">
-                    <h5 id="topText">TOP TEXT</h5>
+                    <h5 id="topText" aria-label="título de meme">TOP TEXT</h5>
                 </div>
-                <div class="container-img" >
+                <div class="container-img" aria-label="imagen-de-meme">
                     <img src="" alt="" id="img-meme">
                 </div>
                 <div class="container-bottom" id="container-bottom-inf">
-                    <h5 id="bottomText">BOTTOM TEXT</h5>
+                    <h5 id="bottomText" aria-label="subtítulo de meme">BOTTOM TEXT</h5>
                 </div>
                 </div>
 
             <!-- Aside Img -->
-            <aside class="container-aside hidden light-mode" id="asideImg">
+            <aside class="container-aside hidden light-mode" id="asideImg" aria-label="seccion-imagen">
                 <section class="aside-img">
                     <div class="box-btn-close">
-                        <button class="btn-close" id="btnClose"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
+                        <button class="btn-close" id="btnClose" aria-label="cerrar-panel"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
                     <p class="title-aside">IMAGEN</p>
                     <label for="url"> URL
-                        <input type="url" name="url" id="url-link" placeholder="https://example.com">
+                        <input type="url" name="url" id="url-link" placeholder="https://example.com" aria-label="url de imagen">
                     </label>
                     <div class="box-aside-bg">
                         <p class="title-bg">FONDO</p>
                         <label for="color">
-                            <input type="color" name="color" id="selectColor">
+                            <input type="color" name="color" id="selectColor" aria-label="agregar color">
                         </label>
-                    <select name="select" id="select-menu">
+                    <select name="select" id="select-menu" aria-label="efectos-imagen">
                         <option value="unset">Ninguno</option>
                         <option value="lighten">Aclarar</option>
                         <option value="darken">Oscurecer</option>
@@ -60,7 +60,7 @@
                     </select>
                     </div>
                     <div class="container-ranges">
-                        <p class="title-bg">FILTROS</p>
+                        <p class="title-bg" aria-label="Filtros para la imagen">FILTROS</p>
                         <label for = "range"> BRILLO
                             <input type="range" name="brightness" id="brightness" min="0" max="1" step="0.1" value="1">
                         </label>
@@ -88,32 +88,32 @@
                         <label for="negative">NEGATIVO
                             <input type="range" name="negative" id="negative" min="0" max="1" step="0.1" value="0">
                         </label>
-                        <button class="reset-filters " id="reset-filters">Restablecer filtros</button>
+                        <button class="reset-filters " id="reset-filters" aria-label="resetear filtros">Restablecer filtros</button>
                     </div>
                 </section> 
             </aside>
             <!-- Aside Texto -->
-            <aside class="container-aside hidden light-mode" id="asideTexto">
+            <aside class="container-aside hidden light-mode" id="asideTexto" aria-label="sección texto">
                 <section class="aside-txt" >
                     <div class="box-btn-close" id="close">
-                        <button class="btn-close" id="btnCloseTxt"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
+                        <button class="btn-close" id="btnCloseTxt" aria-label="cerrar-panel"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
                         <p class="title-aside" id="titleAside">TEXTO</p>
                         <label for="text-area-sup">SUPERIOR
-                            <textarea name="text" id="text-area-sup"></textarea>
+                            <textarea name="text" id="text-area-sup" aria-label="agregar titulo"></textarea>
                         </label>
                         <label for="checkbox-sup">
-                            <input type="checkbox" name="checkbox" id="checkbox-sup">Sin texto superior
+                            <input type="checkbox" name="checkbox" id="checkbox-sup" aria-label="sin texto superior">Sin texto superior
                         </label>
                         <label for="text-area-inf">INFERIOR
-                            <textarea name="text" id="text-area-inf"></textarea>
+                            <textarea name="text" id="text-area-inf" aria-label="agregar subtítulo"></textarea>
                         </label>
                         <label for="checkbox-inf">
-                            <input type="checkbox" name="check-box" id="checkbox-inf">Sin texto inferior
+                            <input type="checkbox" name="check-box" id="checkbox-inf" aria-label="sin texto inferior">Sin texto inferior
                         </label>
                         <div class="box-aside-font">
-                            <p class="title-font">FUENTE</p>
-                            <select name="select" id="select-font">
+                            <p class="title-font" aria-label="Fuente">FUENTE</p>
+                            <select name="select" id="select-font" aria-label="fuentes de letra">
                                 <option value="Arial">Arial</option>
                                 <option value="Arial Black">Arial black</option>
                                 <option value="American Typewriter">American Typewriter</option>
@@ -125,16 +125,16 @@
                                 <option value="Times New Roman">Times New Roman</option>
                             </select>
                                 <div class="box-font-size">
-                                    <label for="number">
+                                    <label for="number" aria-label="tamaño de letra">
                                         <input type="number" name="number" id="font-number" min="1" max="100" value="28">
                                     </label>
-                                    <button class="align-left-btn">
+                                    <button class="align-left-btn" aria-label="alinear a la izquierda">
                                         <img src="https://img.icons8.com/fluency-systems-regular/48/align-left.png" alt="align-left" class="icon-align"/>
                                     </button>
-                                    <button class="align-justify-btn">
+                                    <button class="align-justify-btn" aria-label="alinear al centro">
                                         <img src="https://img.icons8.com/fluency-systems-regular/48/align-justify.png" alt="align-justify" class="icon-align"/>
                                     </button>
-                                    <button class="align-right-btn">
+                                    <button class="align-right-btn" aria-label="alinear a la derecha">
                                         <img src="https://img.icons8.com/fluency-systems-regular/48/align-right.png" alt="align-right" class="icon-align"/>
                                     </button>
                                 </div>
@@ -142,20 +142,20 @@
                                     <div class="box-fondo-left">
                                         <p class="title-color">COLOR</p>
                                         <label for="Color">
-                                            <input type="color" name="color" id="textColor">
+                                            <input type="color" name="color" id="textColor" aria-label="agregar color al texto">
                                         </label>
                                     </div>
                                     <div class="box-fondo-right">
                                         <p class="title-bgcolor">FONDO</p>
                                         <label for="input-bg-color">
-                                            <input type="color" name="input-bg-color" id="input-bg-color">
+                                            <input type="color" name="input-bg-color" id="input-bg-color" aria-label="agregar fondo al texto">
                                         </label>
                                     </div>
                                 </div>
                                         <label for="checkboxTransp">
                                             <input type="checkbox" name="transparent-bg" id="checkboxTransp" class="transparent-checbox">Fondo transparente
                                         </label>
-                                <div class="box-contorno">
+                                <div class="box-contorno" aria-label="contorno">
                                     <p>CONTORNO</p> 
                                     <button id="ningun">Ninguno</button>
                                     <button id="claro">Claro</button>
@@ -164,10 +164,10 @@
                                 <div class="box-spacing">
                                     <p>ESPACIADO</p>
                                     <label for="number-spacing">
-                                        <input type="number" name="number-spacing" id="inputSpacing" min="1" max="50" value="35">
+                                        <input type="number" name="number-spacing" id="inputSpacing" min="1" max="50" value="35" aria-label="espaciado">
                                     </label>
                                     <p>INTERLINEADO</p>
-                                    <select name="select" id="lineSpacing">
+                                    <select name="select" id="lineSpacing" aria-label="interlineado">
                                         <option value="0.8">0.8</option>
                                         <option value="1">1</option>
                                         <option value="1.2">1.2</option>
@@ -181,7 +181,7 @@
                     </section>
                 </aside>
                 <section class="section-footer">
-                    <button class="download-btn" id="button-descarga"> <img class="icon-download" src="icons/i-download.png" alt="icono-descargar">Descargar meme</button>
+                    <button class="download-btn" id="button-descarga" aria-label="descargar meme"> <img class="icon-download" src="icons/i-download.png" alt="icono-descargar">Descargar meme</button>
                 </section>
                 <script src="main.js"></script>
             </main>
