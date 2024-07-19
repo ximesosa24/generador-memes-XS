@@ -1,6 +1,6 @@
 :root{
     --bg-header:#2c252e8f;
-    --bg-body:#2d2032;
+    --bg-body:#2d2032; 
     --bg-inputs:#393e49;
     --bg-aside:#252935;
     --bg-btn:rgb(71, 34, 78);
@@ -14,10 +14,28 @@
 body{
     background-color: var(--bg-body);
 }
-.dark-mode, .oculto{
-    background-color: #222;
-    color: #fff;
+.transparent{
+    background: transparent;
 }
+
+/* 
+.light-mode {
+    --bg-body: #f2f2f2;
+    --bg-header: #fff;
+    --bg-inputs: #ddd;
+    --bg-aside: #eee;
+    --bg-btn: #ccc;
+    color: #000000;
+}
+.dark-mode {
+    --bg-body: #222;
+    --bg-header: #333;
+    --bg-inputs: #444;
+    --bg-aside: #555;
+    --bg-btn: #666;
+    color: #fff;
+}*/
+
 /*Header*/
 header{
     background-color: var(--bg-header);
@@ -111,7 +129,7 @@ background-color: var(--bg-inputs); /
     justify-content: center;
     align-items: center;
 }
-/*Settings General Aside */
+/*General settings Aside */
 .container-aside{
     width: 20%;
     height:100vh ;
@@ -135,7 +153,9 @@ background-color: var(--bg-inputs); /
     text-align: center;
     padding-top: 5px;
 }
+
 /* Aside img */
+
 #url-link{
     background-color: var(--bg-inputs);
     width: 100%;
@@ -190,9 +210,12 @@ background-color: var(--bg-inputs); /
     display: flex;
     justify-content: flex-end;
     margin-top: 0;
+
 }
-.box-btn-close button img{
+.box-btn-close button img{ /*add*/
     cursor: pointer;
+    width: 5px;
+    width: 15px;
 }
 .aside-txt textarea{
     background-color: var(--bg-inputs);
@@ -280,31 +303,6 @@ background-color: var(--bg-inputs); /
     border: none;
     color: white;
 }
-/* agrego estilos a los botones contorno
-.contorno-ninguno {
-    text-shadow: none;
-}
-.contorno-claro {
-    text-shadow: 
-    -1px -1px 0 #fff,  
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;  
-    /* color: black; 
- } */
-
-/*.contorno-oscuro {
-    text-shadow: 
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;  
-    color: white;
-    rgb(0, 0, 0) 2px 2px,
-    rgb(0, 0, 0) -2px 2px, 
-    rgb(0, 0, 0) 2px -2px, 
-    rgb(0, 0, 0) -2px -2px;
-} */
 .box-spacing{
     padding-top: 3px;
 }
@@ -345,3 +343,18 @@ input{
     height: 20px;
     padding: 6px 5px 0 0;
 }
+
+/* Media Querys */
+/* @media (max-width:768px){
+    .container-aside{
+
+    }
+    .download-btn{
+        font-size: 10px;
+        padding-bottom: 10px;
+    }
+    .icon-download{
+        padding: none;
+    }
+} */
+

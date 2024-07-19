@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="font-awesome.min.css">
 
     </head>
-        <body class="light-mode" id="body">
+        <body id="body">
             <header class="container-header">
                 <h1 class="title-header">Generador de Memes</h1>
                 <div class="container-button">
@@ -24,13 +24,13 @@
             </header>
             <main class="container-main">
                 <div class="container-meme" id="canvaMeme" >
-                <div class="container-text">
+                <div class="container-text" id="container-text-sup">
                     <h5 id="topText">TOP TEXT</h5>
                 </div>
                 <div class="container-img" >
                     <img src="" alt="" id="img-meme">
                 </div>
-                <div class="container-bottom">
+                <div class="container-bottom" id="container-bottom-inf">
                     <h5 id="bottomText">BOTTOM TEXT</h5>
                 </div>
                 </div>
@@ -99,30 +99,30 @@
                         <button class="btn-close" id="btnCloseTxt"><img src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></button>
                     </div>
                         <p class="title-aside" id="titleAside">TEXTO</p>
-                        <label for="text-area">SUPERIOR
-                            <textarea name="text" id="text-area"></textarea>
+                        <label for="text-area-sup">SUPERIOR
+                            <textarea name="text" id="text-area-sup"></textarea>
                         </label>
-                        <label for="checkbox">
-                            <input type="checkbox" name="checkbox" id="checkbox-txt">Sin texto superior
+                        <label for="checkbox-sup">
+                            <input type="checkbox" name="checkbox" id="checkbox-sup">Sin texto superior
                         </label>
-                        <label for="text-Area">INFERIOR
-                            <textarea name="text" id="text-Area"></textarea>
+                        <label for="text-area-inf">INFERIOR
+                            <textarea name="text" id="text-area-inf"></textarea>
                         </label>
-                        <label for="check-box">
-                            <input type="checkbox" name="check-box" id="checkbox">Sin texto inferior
+                        <label for="checkbox-inf">
+                            <input type="checkbox" name="check-box" id="checkbox-inf">Sin texto inferior
                         </label>
                         <div class="box-aside-font">
                             <p class="title-font">FUENTE</p>
                             <select name="select" id="select-font">
-                                <option value="arial">Arial</option>
-                                <option value="arial-black">Arial black</option>
-                                <option value="american-typewriter">American Typewriter</option>
-                                <option value="andale-mono">Andale Mono</option>
-                                <option value="comic-sans">Comic Sans Ms</option>
-                                <option value="helvetica">Helvetica</option>
-                                <option value="impact">Impact</option>
-                                <option value="verdana">Verdana</option>
-                                <option value="times-new-roman">Times New Roman</option>
+                                <option value="Arial">Arial</option>
+                                <option value="Arial Black">Arial black</option>
+                                <option value="American Typewriter">American Typewriter</option>
+                                <option value="Andale Mono">Andale Mono</option>
+                                <option value="Comic Sans">Comic Sans Ms</option>
+                                <option value="Helvetica">Helvetica</option>
+                                <option value="Impact">Impact</option>
+                                <option value="Verdana">Verdana</option>
+                                <option value="Times New Roman">Times New Roman</option>
                             </select>
                                 <div class="box-font-size">
                                     <label for="number">
@@ -152,8 +152,8 @@
                                         </label>
                                     </div>
                                 </div>
-                                        <label for="checkbox-color">
-                                            <input type="checkbox" name="transparent-bg" id="checkbox-color" class="transparent-checbox">Fondo transparente
+                                        <label for="checkboxTransp">
+                                            <input type="checkbox" name="transparent-bg" id="checkboxTransp" class="transparent-checbox">Fondo transparente
                                         </label>
                                 <div class="box-contorno">
                                     <p>CONTORNO</p> 
@@ -168,12 +168,12 @@
                                     </label>
                                     <p>INTERLINEADO</p>
                                     <select name="select" id="lineSpacing">
-                                        <option value="">0.8</option>
-                                        <option value="">1</option>
-                                        <option value="">1.2</option>
-                                        <option value="">1.5</option>
-                                        <option value="">2</option>
-                                        <option value="">2.5</option>
+                                        <option value="0.8">0.8</option>
+                                        <option value="1">1</option>
+                                        <option value="1.2">1.2</option>
+                                        <option value="1.5">1.5</option>
+                                        <option value="2">2</option>
+                                        <option value="2.5">2.5</option>
                                     </select>
                                 </div>
                         </div>
