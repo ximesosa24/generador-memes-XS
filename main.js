@@ -47,17 +47,19 @@ const checkBoxInf = document.getElementById ('checkbox-inf')//checkbox inf
 const supTxt = document.getElementById('container-text-sup');//container top text
 const infTxt = document.getElementById('container-bottom-inf') ; // container bottom text
 
-//Event dark mode - it doesn't works correctly//
+//Event dark mode //
 btn.addEventListener('click', function(){
   if (body.classList.contains('dark-mode')){
     body.classList.remove('dark-mode');
+    btn.innerHTML='Modo Oscuro';
   }else{
     body.classList.add('dark-mode');
+    btn.innerHTML = 'Modo claro';
   }
   });
 
 
-//  SHOW ASIDES   // --CAMBIE--
+//  SHOW ASIDES   // 
 
 btnImg.addEventListener('click', () => {
     asideImg.style.display = "block";
@@ -216,7 +218,7 @@ alignRight.addEventListener('click', function(){
 });
 
 
-//Transparent - no anda//
+//Transparent //
 document.addEventListener("DOMContentLoaded", function() {
   const checkTransparente = document.getElementById('checkboxTransp');
 

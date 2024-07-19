@@ -1,9 +1,10 @@
-:root{
+:root {
     --bg-header:#2c252e8f;
     --bg-body:#2d2032;
     --bg-inputs:#393e49;
-    --bg-aside:#252935;
+    --bg-aside:#282529;
     --bg-btn:rgb(71, 34, 78);
+    color: white;
 }
 *{
     padding: 0;
@@ -18,29 +19,21 @@ body{
     background: transparent;
 }
 
-/*
-.light-mode {
-    --bg-body: #f2f2f2;
-    --bg-header: #fff;
-    --bg-inputs: #ddd;
-    --bg-aside: #eee;
-    --bg-btn: #ccc;
-    color: #000000;
-}
+
 .dark-mode {
-    --bg-body: #222;
-    --bg-header: #333;
-    --bg-inputs: #444;
-    --bg-aside: #555;
-    --bg-btn: #666;
-    color: #fff;
-}*/
+    --bg-body: #bba0be;
+    --bg-header: #a48ca5;
+    --bg-inputs: #bab6ce;
+    --bg-aside: #c7b3c8;
+    --bg-btn: var(--bg-header);
+    color: black;
+} 
+
 
 /*Header*/
 header{
     background-color: var(--bg-header);
     height: 100px;
-    color: white;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -62,7 +55,6 @@ header{
     padding-top: 2px ;
 }
 .container-button button{
-    color: white;
     border: none;
     margin: 0 3px 2px 3px;
     font-size: 17px;
@@ -141,16 +133,15 @@ main{
 }
 /*General settings Aside */
 .container-aside{
+    background:var(--bg-aside);
     width: 20%;
     height:100% ;
-    background-color:var(--bg-aside);
     display:flex;
     flex-direction:column;
     position: fixed;
     top: 0;
     float: right;
     right: 0;
-    color: white;
     font-size: 15px;
     gap: 25px;
     padding: 0 2px;
